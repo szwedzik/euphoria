@@ -1,0 +1,36 @@
+{
+  "name": "discord-bot-template",
+  "version": "1.0.0",
+  "description": "A scalable Discord bot template with TypeScript, Prisma, and MongoDB",
+  "type": "module",
+  "main": "dist/index.ts",
+  "scripts": {
+    "dist": "tsc && nodemon --watch dist dist/index.js",
+    "start": "node --loader ts-node/esm src/index.ts",
+    "dev": "nodemon --exec ts-node src/index.ts",
+    "deploy": "node --loader ts-node/esm src/deployCommands.ts",
+    "prisma:generate": "npx prisma generate --schema .\\src\\database\\prisma\\schema.prisma"
+  },
+  "dependencies": {
+    "@eslint/js": "^9.21.0",
+    "@prisma/client": "^5.22.0",
+    "discord.js": "^14.8.0",
+    "dotenv": "^16.4.7",
+    "eslint": "^9.21.0",
+    "globals": "^16.0.0",
+    "prettier": "^3.5.2",
+    "typescript-eslint": "^8.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.0",
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.2.2"
+  },
+  "packageManager": "pnpm@10.4.1+sha512.c753b6c3ad7afa13af388fa6d808035a008e30ea9993f58c6663e2bc5ff21679aa834db094987129aa4d488b86df57f7b634981b2f827cdcacc698cc0cfb88af",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@prisma/client"
+    ]
+  }
+}
